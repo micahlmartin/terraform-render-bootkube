@@ -73,7 +73,7 @@ variable "container_images" {
     calico_cni       = "quay.io/calico/cni:v3.3.1"
     flannel          = "quay.io/coreos/flannel:v0.10.0-amd64"
     flannel_cni      = "quay.io/coreos/flannel-cni:v0.3.0"
-    hyperkube        = "k8s.gcr.io/hyperkube:v1.12.2"
+    hyperkube        = "k8s.gcr.io/hyperkube:v1.13.0-beta.1"
     coredns          = "k8s.gcr.io/coredns:1.2.6"
     pod_checkpointer = "quay.io/coreos/pod-checkpointer:018007e77ccd61e8e59b7e15d7fc5e318a5a2682"
   }
