@@ -27,3 +27,16 @@ resource "template_dir" "calico-manifests" {
     pod_cidr                        = "${var.pod_cidr}"
   }
 }
+
+resource "template_dir" "kube-router-manifests" {
+  count           = "${var.networking == "kube-router" ? 1 : 0}"
+  source_dir      = "${path.module}/resources/kube-router"
+  destination_dir = "${var.asset_dir}/manifests-networking"
+
+  vars {
+    kube_router_image = "${var.container_images["kube_router"]}"
+    flannel_cni_image = "${var.container_images["flannel_cni"]}"
+
+    network_mtu = "${var.network_mtu}"
+  }
+}
